@@ -25,11 +25,11 @@ var Ticket = function (movie,date,time,age){
   this.price= 10;
 }
 
-Ticket.prototype.calculatePrice = function(time, age){
-  if (time !== times.time2){
+Ticket.prototype.calculatePrice = function(){
+  if (this.time !== times.time2){
     this.price *= 0.7;
   }
-  if (age !== ages.age3) {
+  if (this.age !== ages.age3) {
     this.price -= 3;
   }
 }
@@ -41,8 +41,17 @@ $(document).ready(function(){
     var dateInput = $("#select-date").val();
     var timeInput = $("#select-time").val();
     var ageInput = $("#select-age").val();
-    
-    var ticketInstance = new Ticket(movies.movieInput)
+    var ticketInstance = new Ticket(movies[movieInput], dateInput, times[timeInput], ages[ageInput]);
+
+    // console.log(ticketInstance);
+    ticketInstance.calculatePrice();
+
+    $(".ticket-info").text("");
+    $(".ticket-info").append(`<p>${ticketInstance.movie}</p>
+                            <p>${ticketInstance.date}</p>
+                            <p>${ticketInstance.time}</p>
+                            <p>${ticketInstance.age}</p>
+                            <p>${ticketInstance.price}</p>`);
 
   });
 
