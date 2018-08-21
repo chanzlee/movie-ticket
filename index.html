@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movie Ticket</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <div class="container">
+      <h3>Box Office</h3>
+      <p>Avengers: Infinity War</p>
+      <p>Mission Impossible</p>
+      <p>Coco</p>
+      <p>Mama Mia! 2</p>
+
+      <form id="buy-ticket">
+        <div class="form-group">
+          <label for="select-movie">Select Movie: </label>
+          <select class="form-control" id="select-movie">
+            <option value="movie1">Avengers: Infinity War</option>
+            <option value="movie2">Mission Impossible</option>
+            <option value="movie3">Coco</option>
+            <option value="movie4">Mama Mia! 2</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="select-date">Select Date: </label>
+          <input class="form-control" type="date" id="select-date">
+        </div>
+
+        <div class="form-group">
+          <label for="select-time">Select Time: </label>
+          <select class="form-control" id="select-time">
+            <option value="time1">Morning</option>
+            <option value="time2">Afternoon</option>
+            <option value="time3">Late Night</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="select-age">Age Discount Eligibility</label>
+          <select class="form-control" id="select-age">
+            <option value="age1">Senior</option>
+            <option value="age2">Kid</option>
+            <option value="age3">Not Applicable</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-info">Buy</button>
+      </form>
+
+      <div id="show-receipt">
+        <h3>Here's your booking information</h3>
+      </div>
+    </div>
+  </body>
+</html>
